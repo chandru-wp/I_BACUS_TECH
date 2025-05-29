@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+   <!-- CSS --> 
+    <style>
+body{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.profile-picture
+{
+    height: 250px;
+    width: 250px;
+    border-radius: 60%;
+
+}
+    </style>
+    
+ </head>
+ <body>
+<!-- JAVA SCRIPT -->
+    <script>
+function Send(){
+    alert("You form submit Successfully");
+}
+    </script>
+
+<!-- Personal Details-->
+
+    <img class="profile-picture" src="./photo.jpg" alt="profile-picture">
+    <h1>CHANDRU KANNAN</h1>
+  
+
+    <h2>About me</h2>
+    <p>Welcome to my profile page! . I'm a Front-End developer with a passion for learning and building new things.</p>
+
+ <h2> Hobbies</h2>
+ <ul>
+    <li>Reading</li>
+
+    <li>Coding</li>
+
+    <li>Chess</li>
+
+ </ul>
+<h2>Skills</h2>
+<ol>
+
+   <li>HTML & CSS</li>
+
+   <li>JAVA SCRIPT</li>
+
+    <li>PYTHON</li>
+</ol> 
+<h2> Get in Touch</h2>
+<form >
+
+<label for="name">Name :</label>
+<input type="name" placeholder="Enter a name"><br><br>
+<label for="email">Email :</label>
+<input type="email" placeholder="Enter a email"><br><br>
+<label for="Message">Message :</label>
+<textarea name="Message" placeholder="Message"></textarea>
+<br><br>
+<button onclick="Send()"> Send</button>
+</form>
+ </body>
+ </html>

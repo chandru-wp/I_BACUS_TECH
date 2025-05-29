@@ -1,0 +1,162 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+<!-- CSS -->
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+         background-color: #ecf0f3;
+
+        outline: none;
+       
+        font-family: sans-serif;
+      }
+      .container{
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      }
+      .calculator{
+        background-color: #ecf0f3;
+         padding: 15px;
+        border-radius: 30px;
+        box-shadow: inset 5px 5px 12px #ffffff,
+                          5px 5px 12px rgba(0,0,0,.16);
+       
+        display: grid;
+        grid-template-columns: repeat(4,68px);
+      }
+      input{
+        grid-column: span 4;
+        height: 70px;
+        width: 260px;
+        background-color: #ecf0f3;
+        box-shadow: inset -5px -5px 12px #ffffff,
+                              5px 5px 12px rgba(0,0,0,.16);
+        border: none;
+        border-radius: 30px;
+        text-align: end;
+        font-size: 50px;
+        padding: 20px;
+        margin: auto;
+        margin-top: 40px; 
+        margin-bottom: 30px;
+         
+      }
+      button{
+        height: 48px;
+        width: 48px;
+        box-shadow: inset -5px -5px 12px #ffffff,
+                               5px 5px 12px rgba(0,0,0,.16);
+        border: none;
+
+         border-radius: 50%;
+        margin: 8px;
+        font-size: 16px;
+      }
+      .equal{
+        width: 115px;
+        border-radius: 40px;
+        background-color:#ecf0ecf3 ;
+        box-shadow: inset -5px -5px 12px #ffffff,
+                               5px 5px 12px rgba(0,0, 0,.16);
+
+      }
+
+      
+    </style>
+
+
+ </head>
+
+ <body>
+ 
+
+   <div class="container">
+      <div class="calculator">
+         <input type="text" placeholder="0" id="result">
+         <button onclick="Clear()">CL</button>
+          <button onclick="del()">DEL</button>
+           <button onclick="operator('%')">%</button>
+            <button onclick="operator('/')">/</button>
+              <button onclick="digit('7')">7</button>  
+                <button onclick="digit('8')">8</button>
+                <button onclick="digit('9')">9</button>
+                  <button onclick="operator('*')">*</button>
+
+                      <button onclick="digit('4')">4</button>
+                        <button onclick="digit('5')">5</button>
+                          <button onclick="digit('6')">6</button>
+                            <button onclick="operator('-')">-</button>
+    
+                                <button onclick="digit('1')">1</button>
+                                  <button onclick="digit('2')">2</button>
+
+                                    <button onclick="digit('3')">3</button>
+                                      <button onclick="operator('+')">+</button> 
+                                       <button onclick="digit('.')">.</button>
+
+                                        <button onclick="digit('0')">0</button> 
+                                       <button onclick="calculateResult('=')" class="equal">=</button>
+                                        
+                                           
+      </div>
+
+   </div>
+
+  <!-- JAVA SCRIPT -->
+
+
+<script>
+
+  let currentResult='';
+  let resultElement=document.getElementById('result');
+  
+  function digit(digit) {
+            currentResult += digit.toString();
+            resultElement.value = currentResult;
+        }
+
+        function operator(operator) {
+            currentResult += operator.toString();
+            resultElement.value = currentResult;
+        }
+
+
+  function Clear(){
+
+    currentResult = '';
+    resultElement.value = '';
+  }
+  function del(){
+   currentResult=currentResult.slice(0,-1);
+   resultElement.value=currentResult;
+  }
+  function calculateResult(){
+    try
+  
+    {
+    let result=eval(currentResult);
+     resultElement.value=result;
+     currentResult=result.toString();
+    }
+    catch(error)
+    {
+      currentResult='Error';
+      resultElement.value='';
+       alert("Invalid value ");
+    }
+  }
+</script> 
+ 
+
+
+</body>
+ </html>
